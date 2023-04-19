@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    box-sizing: border-box;
+    max-width: 1800px;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    float: right;
+}
+
+section {
+    min-height: 100vh;
+    padding-top: 30px;
+}
+
+img {
+    height: 400px;
+}

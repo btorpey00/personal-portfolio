@@ -1,5 +1,6 @@
 :root {
     --light-bg: rgb(216, 216, 216);
+    --light-bg-transparent: rgb(216, 216, 216, .8);
     --dark-bg: rgb(61, 61, 61);
     --accent-color: rgb(253, 67, 0);
     --light-text: rgb(211, 211, 211);
@@ -8,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 45px;
 }
 
 *,
@@ -150,7 +152,7 @@ h2 {
         align-items: center;
         justify-content: flex-start;
         background: var(--dark-bg);
-        padding-top: 55px;
+        padding-top: 75px;
         visibility: hidden;
         transition: all .3s ease-in-out;
     }
@@ -162,11 +164,17 @@ h2 {
 
 /* All Sections */
 section {
-    min-height: 80vh;
     width: 100%;
-    padding: 60px 10px 10px 10px;
+    padding: 30px 10px 10px 10px;
     border-bottom: 2px solid var(--accent-color);
 }
+
+.home,
+.about,
+.projects {
+    min-height: 80vh;
+}
+
 
 /* Home */
 .home {
@@ -207,6 +215,7 @@ section {
 .about-text {
     max-width: 800px;
     margin-bottom: 1rem;
+    line-height: 1.25rem;
 }
 
 .about h3 {
@@ -296,4 +305,14 @@ section {
 .contact {
     background: var(--dark-bg);
     color: var(--light-text);
+    border-bottom: none;
+}
+
+.contact-container {
+    display: grid;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5rem;
+    padding-bottom: 100px;
 }

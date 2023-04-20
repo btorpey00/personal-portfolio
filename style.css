@@ -36,7 +36,7 @@ a {
 h2 {
     text-align: center;
     text-decoration: underline var(--accent-color);
-    font-size: 1.75rem;
+    font-size: 2rem;
 }
 
 /* Navigation Bar */
@@ -56,10 +56,11 @@ h2 {
     display: flex;
     list-style: none;
     gap: 15px;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--light-text);
 }
 
+/* Nav items underline */
 .nav-item {
     position: relative;
 }
@@ -77,10 +78,86 @@ h2 {
     transition: transform .2s ease-in-out;
     filter: blur(1px);
 }
-
 .nav-item:hover::after,
 .nav-item:focus-within::after{
     transform: scale(1);
+}
+
+/* Hamburger button */
+.hamburger-button {
+    display: none;
+    background-color: var(--dark-bg);
+    height: 35px;
+    width: 45px;
+    border: none;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    z-index: 5;
+}
+.hamburger-line {
+    width: 35px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: var(--light-bg);
+    /* position: relative; */
+    transition: all .3s ease-in-out;
+}
+.hamburger-line::before,
+.hamburger-line::after {
+    content: '';
+    width: 35px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: var(--light-bg);
+    transition: all .3s ease-in-out;
+    opacity: 1;
+}
+.hamburger-line::before {
+    position: absolute;
+    transform: translate(-50%, -10px);
+}
+.hamburger-line::after {
+    position: absolute;
+    transform: translate(-50%, 10px);
+}
+.menu-open .hamburger-line {
+    background: var(--dark-bg);
+}
+.menu-open .hamburger-line::before {
+    transform: translateX(-50%) rotate(45deg);
+    background: var(--accent-color);
+}
+.menu-open .hamburger-line::after {
+    transform: translateX(-50%) rotate(-45deg);
+    background: var(--accent-color);
+}
+
+
+@media (max-width: 800px) {
+    .hamburger-button {
+        display: block;
+    }
+    .nav-list {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        align-items: center;
+        justify-content: flex-start;
+        background: var(--dark-bg);
+        padding-top: 55px;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+    }
+    .menu-open .nav-list {
+        transform: translateX(-100%);
+        visibility: visible;
+    }
 }
 
 /* All Sections */

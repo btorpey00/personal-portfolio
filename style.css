@@ -210,6 +210,9 @@ section {
 .about {
     background: var(--dark-bg);
     color: var(--light-text);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding-bottom: 30px;
 }
 
 .about-text {
@@ -232,6 +235,7 @@ section {
     gap: 20px;
     padding: 20px;
     margin-top: 40px;
+    align-self: center;
 }
 
 .about-left {
